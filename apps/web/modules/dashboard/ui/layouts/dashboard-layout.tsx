@@ -1,9 +1,9 @@
 import { cookies } from "next/headers";
 
 import { AuthGuard } from "@/modules/auth/components/auth-guard";
-import { SidebarProvider } from "@workspace/ui/components/sidebar";
-import { DashboardSidebar } from "@/modules/dashboard/ui/components/dashboard-sidebar";
 import { OrganizationGuard } from "@/modules/auth/components/organization-guard";
+import { DashboardSidebar } from "@/modules/dashboard/ui/components/dashboard-sidebar";
+import { SidebarProvider } from "@workspace/ui/components/sidebar";
 
 export const DashboardLayout = async ({
   children
