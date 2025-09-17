@@ -3,7 +3,7 @@
 import { useAtomValue } from "jotai";
 
 import { screenAtom } from "@/modules/widget/atoms/widget-atoms";
-import { WidgetLoadingScreen } from "@/modules/widget/ui//screens/widget-loading-screen";
+import { WidgetLoadingScreen } from "@/modules/widget/ui/screens/widget-loading-screen";
 import { WidgetSelectionScreen } from "@/modules/widget/ui/screens/widget-selection-screen";
 import { WidgetAuthScreen } from "@/modules/widget/ui/screens/widget-auth-screen";
 import { WidgetErrorScreen } from "@/modules/widget/ui/screens/widget-error-screen";
