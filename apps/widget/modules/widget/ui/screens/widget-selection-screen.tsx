@@ -15,6 +15,7 @@ import {
   screenAtom
 } from "../../atoms/widget-atoms";
 import { api } from "@workspace/backend/_generated/api";
+import { WidgetFooter } from "../components/widget-footer";
 
 export const WidgetSelectionScreen = () => {
   const setScreen = useSetAtom(screenAtom);
@@ -79,6 +80,7 @@ export const WidgetSelectionScreen = () => {
           </div>
         </Button>
       </div>
+      <WidgetFooter />
     </>
   );
 };
