@@ -1,3 +1,5 @@
+"use client";
+
 import { z } from "zod";
 import { useAtomValue, useSetAtom } from "jotai";
 import { useForm } from "react-hook-form";
