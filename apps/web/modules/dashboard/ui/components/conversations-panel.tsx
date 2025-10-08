@@ -22,10 +22,7 @@ import { ScrollArea } from "@workspace/ui/components/scroll-area";
 import { DicebearAvatar } from "@workspace/ui/components/dicebear-avatar";
 import { UseInfiniteScroll } from "@workspace/ui/hooks/use-infinite-scroll";
 import { InfiniteScrollTrigger } from "@workspace/ui/components/infinite-scroll-trigger";
-import {
-  getCountryFromTimezobne,
-  getCountryFlagUrl
-} from "@/lib/country-utils";
+import { getCountryFromTimezone, getCountryFlagUrl } from "@/lib/country-utils";
 import { ConversationStatusIcon } from "@workspace/ui/components/conversation-status-icon";
 import {
   Select,
@@ -115,7 +112,7 @@ export const ConversationsPanel = () => {
               const isLastMessageFromOperator =
                 conversation.lastMessage?.message?.role !== "user";
 
-              const country = getCountryFromTimezobne(
+              const country = getCountryFromTimezone(
                 conversation.contactSession.metadata?.timezone
               );
 
@@ -192,7 +189,7 @@ export const ConversationsPanel = () => {
 export const SkeletonConversations = () => {
   return (
     <div className="flex min-h-0 flex-1 flex-col gap-2 overflow-auto">
-      <div className="relative flex w-full win-w-0 flex-col p-2">
+      <div className="relative flex w-full min-w-0 flex-col p-2">
         <div className="w-full space-y-2">
           {Array.from({ length: 8 }).map((_, index) => (
             <div key={index} className="flex items-start gap-3 rounded-lg p-4">

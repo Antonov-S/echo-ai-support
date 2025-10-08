@@ -1,6 +1,6 @@
 import * as ct from "countries-and-timezones";
 
-export function getCountryFromTimezobne(timezone?: string) {
+export function getCountryFromTimezone(timezone?: string) {
   if (!timezone) return null;
 
   const timezoneInfo = ct.getTimezone(timezone);
