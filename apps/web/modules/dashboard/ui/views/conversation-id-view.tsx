@@ -114,7 +114,8 @@ export const ConversationIdView = ({
     setIsUpdatingStatus(true);
     let newStatus: "unresolved" | "escalated" | "resolved";
 
-    // Cicle throough states: unresolved -> escalated -> resolved -> unresolved
+    // Cycle through states: unresolved -> escalated -> resolved -> unresolved
+
     if (conversation.status === "unresolved") {
       newStatus = "escalated";
     } else if (conversation.status === "escalated") {
@@ -223,7 +224,7 @@ export const ConversationIdView = ({
                   }
                 >
                   <Wand2Icon />
-                  {isEnhanceing ? "Enhanceing..." : "Enhance"}
+                  {isEnhanceing ? "Enhancing..." : "Enhance"}
                 </AIInputButton>
               </AIInputTools>
               <AIInputSubmit

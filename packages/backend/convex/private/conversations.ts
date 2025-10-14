@@ -26,7 +26,7 @@ export const updateStatus = mutation({
 
     const orgId = identity.orgId as string;
 
-    if (identity === null) {
+    if (!orgId) {
       throw new ConvexError({
         code: "UNAUTHORIZED",
         message: "Organization not found"
@@ -71,7 +71,7 @@ export const getOne = query({
 
     const orgId = identity.orgId as string;
 
-    if (identity === null) {
+    if (!orgId) {
       throw new ConvexError({
         code: "UNAUTHORIZED",
         message: "Organization not found"
@@ -133,7 +133,7 @@ export const getMany = query({
 
     const orgId = identity.orgId as string;
 
-    if (identity === null) {
+    if (!orgId) {
       throw new ConvexError({
         code: "UNAUTHORIZED",
         message: "Organization not found"

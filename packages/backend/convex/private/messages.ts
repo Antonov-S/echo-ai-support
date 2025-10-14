@@ -97,6 +97,12 @@ export const create = mutation({
       });
     }
 
+    if (conversation.status === "unresolved") {
+      await ctx.db.patch(args.conversationId, {
+        status: "escalated"
+      });
+    }
+
     await saveMessage(ctx, components.agent, {
       threadId: conversation.threadId,
       // TODO: Check if agentName is needed or not
@@ -126,7 +132,7 @@ export const getMany = query({
 
     const orgId = identity.orgId as string;
 
-    if (identity === null) {
+    if (!orgId === null) {
       throw new ConvexError({
         code: "UNAUTHORIZED",
         message: "Organization not found"
