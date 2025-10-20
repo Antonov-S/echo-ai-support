@@ -2,6 +2,7 @@ import { ConvexError, v } from "convex/values";
 import { paginationOptsValidator } from "convex/server";
 
 import { saveMessage } from "@convex-dev/agent";
+import { search } from "../system/ai/tools/search";
 import { action, query } from "../_generated/server";
 import { components, internal } from "../_generated/api";
 import { supportAgent } from "../system/ai/agents/supportAgent";
@@ -60,8 +61,9 @@ export const create = action({
         {
           prompt: args.prompt,
           tools: {
-            resolveConversation,
-            escalateConversation
+            resolveConversationTool: resolveConversation,
+            escalateConversationTool: escalateConversation,
+            searchTool: search
           }
         }
       );

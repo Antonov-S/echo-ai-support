@@ -116,7 +116,7 @@ export const UploadDialog = ({
 
           <div className="space-y-2">
             <Label htmlFor="filename">
-              Filemane{" "}
+              Filename{" "}
               <span className="text-muted-foreground text-xs">(optional)</span>
             </Label>
             <Input

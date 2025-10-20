@@ -266,11 +266,15 @@ async function convertEntryToPublicFile(
 }
 
 function formatFileSize(bytes: number): string {
-  if (bytes === 0) return "0 B";
+  if (!Number.isFinite(bytes) || bytes <= 0) return "0 B";
 
   const k = 1024;
-  const sizes = ["B", "KB", "MB", "GB"];
-  const i = Math.floor(Math.log(bytes) / Math.log(k));
+  const units = ["B", "KB", "MB", "GB", "TB", "PB"];
+  const i = Math.min(
+    Math.floor(Math.log(bytes) / Math.log(k)),
+    units.length - 1
+  );
+  const value = bytes / k ** i;
 
-  return `${Number.parseFloat((bytes / k ** i).toFixed(1))} ${sizes[i]}`;
+  return `${value.toFixed(1)} ${units[i]}`;
 }

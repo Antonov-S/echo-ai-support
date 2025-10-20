@@ -112,7 +112,7 @@ export const FilesView = () => {
                   if (isLoadingFirstPage) {
                     return (
                       <TableRow>
-                        <TableCell className="h024 text-center" colSpan={4}>
+                        <TableCell className="h-24 text-center" colSpan={4}>
                           Loading files...
                         </TableCell>
                       </TableRow>
@@ -122,7 +122,7 @@ export const FilesView = () => {
                   if (files.results.length === 0) {
                     return (
                       <TableRow>
-                        <TableCell className="h024 text-center" colSpan={4}>
+                        <TableCell className="h-24 text-center" colSpan={4}>
                           No files found
                         </TableCell>
                       </TableRow>
