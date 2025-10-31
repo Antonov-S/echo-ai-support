@@ -62,11 +62,11 @@ export const getAssistants = action({
       });
     }
 
-    const vapiClinet = new VapiClient({
+    const vapiClient = new VapiClient({
       token: secretData.privateApiKey
     });
 
-    const assistants = await vapiClinet.assistants.list();
+    const assistants = await vapiClient.assistants.list();
 
     return assistants;
   }
@@ -129,11 +129,11 @@ export const getPhoneNumbers = action({
       });
     }
 
-    const vapiClinet = new VapiClient({
+    const vapiClient = new VapiClient({
       token: secretData.privateApiKey
     });
 
-    const phoneNumbers = await vapiClinet.phoneNumbers.list();
+    const phoneNumbers = await vapiClient.phoneNumbers.list();
 
     return phoneNumbers;
   }
