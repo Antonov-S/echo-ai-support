@@ -93,7 +93,7 @@ export const VapiConnectedView = ({ onDisconnect }: VapiConnectedViewProps) => {
               <PhoneIcon />
               Phone Numbers
             </TabsTrigger>
-            <TabsTrigger className="h-full rounded-none" value="assinstants">
+            <TabsTrigger className="h-full rounded-none" value="assistants">
               <BotIcon />
               Ai Assistants
             </TabsTrigger>
@@ -101,7 +101,7 @@ export const VapiConnectedView = ({ onDisconnect }: VapiConnectedViewProps) => {
           <TabsContent value="phone-numbers">
             <VapiPhoneNumbersTab />
           </TabsContent>
-          <TabsContent value="assinstants">
+          <TabsContent value="assistants">
             <VapiAssistantsTab />
           </TabsContent>
         </Tabs>
