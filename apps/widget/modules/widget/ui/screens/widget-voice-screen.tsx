@@ -27,6 +27,15 @@ export const WidgetVoiceScreen = () => {
     isConnecting
   } = useVapi();
 
+  const hashMessage = (text: string) => {
+    let hash = 0;
+    for (let i = 0; i < text.length; i++) {
+      hash = (hash << 5) - hash + text.charCodeAt(i);
+      hash |= 0;
+    }
+    return Math.abs(hash).toString(36);
+  };
+
   return (
     <>
       <WidgetHeader>
@@ -42,12 +51,12 @@ export const WidgetVoiceScreen = () => {
         </div>
       </WidgetHeader>
       {transcript.length > 0 ? (
-        <AIConversation className="h-full flex-1">
+        <AIConversation className="h-full">
           <AIConversationContent>
             {transcript.map((message, index) => (
               <AIMessage
                 from={message.role}
-                key={`${message.role}-${index}-${message.text}`}
+                key={`${message.role}-${hashMessage(message.text ?? "")}-${index}`}
               >
                 <AIMessageContent>{message.text}</AIMessageContent>
               </AIMessage>
