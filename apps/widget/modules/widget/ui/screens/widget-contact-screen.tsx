@@ -3,7 +3,6 @@ import { useState } from "react";
 import { useAtomValue, useSetAtom } from "jotai";
 import { ArrowLeftIcon, CheckIcon, CopyIcon, PhoneIcon } from "lucide-react";
 
-import { cn } from "@workspace/ui/lib/utils";
 import { Button } from "@workspace/ui/components/button";
 import { screenAtom, widgetSettingsAtom } from "../../atoms/widget-atoms";
 import { WidgetHeader } from "@/modules/widget/ui/components/widget-header";
@@ -80,7 +79,7 @@ export const WidgetContactScreen = () => {
               </>
             )}
           </Button>
-          <Button asChild className="w-full" size="lg">
+          <Button asChild className="w-full" size="lg" disabled={!phoneNumber}>
             <Link href={`tel:${phoneNumber}`}>
               <PhoneIcon />
               Call Now
