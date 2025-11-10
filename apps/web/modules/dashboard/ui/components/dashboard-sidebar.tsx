@@ -1,9 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { OrganizationSwitcher, UserButton } from "@clerk/nextjs";
+
+import { cn } from "@workspace/ui/lib/utils";
 import {
   CreditCardIcon,
   InboxIcon,
@@ -26,8 +27,6 @@ import {
   SidebarRail
 } from "@workspace/ui/components/sidebar";
 
-import { cn } from "@workspace/ui/lib/utils";
-
 const customerSupportItems = [
   {
     title: "Conversations",
@@ -35,7 +34,7 @@ const customerSupportItems = [
     icon: InboxIcon
   },
   {
-    title: "Knowladge Base",
+    title: "Knowledge Base",
     url: "/files",
     icon: LibraryBigIcon
   }
