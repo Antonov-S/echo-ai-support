@@ -10,6 +10,7 @@ import {
 
 import rag from "../system/ai/rag";
 import { Id } from "../_generated/dataModel";
+import { internal } from "../_generated/api";
 import { paginationOptsValidator } from "convex/server";
 import { extractTextContent } from "../lib/extractTextContent";
 import { action, mutation, query, QueryCtx } from "../_generated/server";
@@ -107,6 +108,20 @@ export const addFile = action({
       throw new ConvexError({
         code: "UNAUTHORIZED",
         message: "Organization not found"
+      });
+    }
+
+    const subscription = await ctx.runQuery(
+      internal.system.subscriptions.getByOrganizationId,
+      {
+        organizationId: orgId
+      }
+    );
+
+    if (subscription?.status !== "active") {
+      throw new ConvexError({
+        code: "BAD_REQUEST",
+        message: "Missing active subscription"
       });
     }
 
